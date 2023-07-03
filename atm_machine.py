@@ -16,12 +16,22 @@ cur = con.cursor()
 
 cur.execute("""
         INSERT INTO Account VALUES
-        (101, 2023, 550.0)
+        (110, 2020, 5121.0)
         """)
 con.commit()
+"""
+This is how you would delete rows if you didn't want to delete first row.
 
-res = cur.execute("SELECT account_num FROM Account")
+res = cur.execute("DELETE FROM Account WHERE rowid != 1")
+con.commit()
+"""
+
+res = cur.execute("""SELECT account_num
+                  FROM Account""")
+
 accountnum = res.fetchall()
+
+
 con.close()
 
 print(accountnum)
