@@ -1,15 +1,18 @@
-# hello this is the main atm file. There will be others included. 
+# hello this is the main atm file. There will be others included.
+"""
+https://docs.python.org/3/library/sqlite3.html is the doc page.
+"""
 import sqlite3
 # import tkinter ; this module is responsible for creating the layout for the bank atm screen. Uses components with familiarity with html/css. 
 
 con = sqlite3.connect("test.db")
 cur = con.cursor()
-# cur.execute("CREATE TABLE Account(account_num, year, balance)")
+#cur.execute("CREATE TABLE Account(account_num, year, balance)")
 
 #verifying that the new table has been created by querying the SQLITE_MASTER table built-in to SQLite
 
-res = cur.execute("SELECT name FROM sqlite_master")
-res.fetchone()
+###res = cur.execute("SELECT name FROM sqlite_master")
+###res.fetchone()
 
 cur.execute("""
         INSERT INTO Account VALUES
@@ -18,4 +21,7 @@ cur.execute("""
 con.commit()
 
 res = cur.execute("SELECT account_num FROM Account")
-res.fetchall()
+accountnum = res.fetchall()
+con.close()
+
+print(accountnum)
