@@ -1,5 +1,6 @@
 # hello this is the main atm file. There will be others included. 
 import sqlite3
+# import tkinter ; this module is responsible for creating the layout for the bank atm screen. Uses components with familiarity with html/css. 
 
 con = sqlite3.connect("test.db")
 cur = con.cursor()
