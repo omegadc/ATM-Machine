@@ -17,12 +17,14 @@ int main() {
 
     menu();
     cin >> account_balance;
+    /*
     if (cin.fail()) {
         cin.clear();
         cin.ignore(5);
         cout << "Enter a valid number from -$10,000 and $10,000\n";
         cin >> account_balance;
     }
+    */
     cout << "This is your balance: $" << account_balance;
     
     return 0;
