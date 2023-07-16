@@ -1,5 +1,3 @@
-// this is c++ and is just to see if I (david) can personally recreate this in c++ since I am recently familiar with c++ over python.
-
 #include <iostream>
 #include <string>
 
@@ -11,21 +9,18 @@ void menu() {
     cout << "New Customer must input their Balance in their account.\n: $";
     
 }
-
 int main() {
-    short account_balance;
-
+    int short accountbalance;
     menu();
-    cin >> account_balance;
-    /*
+
+    cin>>accountbalance;
     if (cin.fail()) {
         cin.clear();
         cin.ignore(5);
         cout << "Enter a valid number from -$10,000 and $10,000\n";
-        cin >> account_balance;
+        cin >> accountbalance;
     }
-    */
-    cout << "This is your balance: $" << account_balance;
-    
+    cout<<"results are "<<accountbalance;
+
     return 0;
 }
